@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>茗茶馆index</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="reloop()">
+    <div class="wrap">
+        <header class="top-header">
+            <img class="tea-logo" src="images/logo.png" alt="茗茶馆">
+            <nav class="top-menu">
+                <ul>
+                <li><a href="#" title="茗茶馆主页">主页</a></li>
+                <li class="selected"><a href="#" title="分类">茶叶分类</a></li>
+                <li><a href="#" title="健康饮茶">健康饮茶</a></li>
+                <li><a href="#" title="用户注册">用户注册</a></li>
+            </ul>
+            </nav>
+        </header>
+
+        <main class="form">
+            <h3>会员申请表</h3>
+            <p>欢迎填写申请表，成为会员，享受会员特权。申请过程将不会收取金额，请放心填写。我们承诺保护您的隐私，不会将它提供给任何第三方。</p>
+            <p>注：<span class="red">*</span> 为必填内容 <div id="t"></div></p>
+
+            <form name="reg" id="reg" action="success.html" method="post">
+                <fieldset>
+                    <legend>账号信息</legend>
+                    <label for="email" class="left"> 邮箱<span class="red">*</span></label>
+                    <input type="email" id="email" name="email" class="right" required><span id="err_ID"></span><span id="err_email"></span><br><br>
+
+
+                    <label for="pw1" class="left"> 密码<span class="red">*</span></label>
+                    <input type="password" id="pw1" name="pw1" class="right" required><span id="err_PWD"></span><br><br>
+
+
+                    <label for="pw2" class="left"> 确认密码<span class="red">*</span></label>
+                    <input type="password" id="pw2" name="pw2" class="right" required><span id="err_REPWD"></span><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>个人信息</legend>
+                    <label for="name" class="left"> 姓名<span class="red">*</span></label>
+                    <input type="text" id="name" name="name" class="right" required><span id="err_NAME"></span><br><br>
+
+
+                    <label for="national" class="left"> 国家<span class="red">*</span></label>
+                    <select name="national" id="national" class="right">
+                        <option value="1">中华人民共和国</option>
+                        <option value="2">其他国家和地区</option>
+                    </select><br><br>
+
+
+                    <label for="district" class="left"> 地区<span class="red">*</span></label>
+                    <select name="district" id="district" class="right">
+                        <option selected>请选择您所属的地区</option>
+                        <option value="1">华东</option>
+                        <option value="2">华南</option>
+                        <option value="3">华中</option>
+                        <option value="4">华北</option>
+                        <option value="5">西北</option>
+                        <option value="6">西南</option>
+                        <option value="7">东北</option>
+                        <option value="8">港澳台</option>
+                        <option value="9">其他</option>
+                    </select><br><br>
+
+
+                    <label for="age" class="left"> 年龄</label>
+                    <input type="number" id="age" name="age" min="10" maxlength="3" class="right"><br><br>
+
+
+                    <div class="left">性别</div>
+                    <input type="radio" id="sex_1" name="sex" value="male">
+                    <label for="sex_1">男</label>
+                    <input type="radio" id="sex_2" name="sex" value="female">
+                    <label for="sex_2">女</label><br><br>
+
+
+                    <div class="left">兴趣爱好</div>
+                    <input type="checkbox" id="interest_0" name="interest_0" value="0">
+                    <label for="interest_0">书籍</label>
+                    <input type="checkbox" id="interest_1" name="interest_1" value="1">
+                    <label for="interest_1">音乐</label>
+                    <input type="checkbox" id="interest_2" name="interest_2" value="2">
+                    <label for="interest_2">电影</label>
+                    <input type="checkbox" id="interest_3" name="interest_3" value="3">
+                    <label for="interest_3">健生</label>
+                </fieldset>
+                
+                
+                <fieldset>
+                    <legend>服务条款</legend>
+                    <label for="yes" class="left"> 是否同意条款 <span class="red">*</span></label>
+                    <textarea name="terms" cols="50" rows="3" readonly>
+                        一、总则
+                        1. 1用户应当仔细阅读本协议，并同意遵守本协议后方可成为会员。用户在使用会员服务之前，应当先阅读本协议。用户同意并遵守本协议的全部条款。完全接受本协议，才能成为会员。
+                        1. 2本协议是会员注册协议，会员注册协议是会员服务协议不可分割的一部分。
+                        1. 3会员服务协议是会员注册协议不可分割的一部分。
+                        1. 4会员服务协议是会员注册协议不可分割的一部分。
+                        1. 5会员服务协议是会员注册协议不可分割的一部分。
+                        1. 6会员服务协议是会员注册协议不可分割的一部分。
+                        1. 7会员服务协议是会员注册协议不可分割的一部分。
+                        1. 8会员服务协议是会员注册协议不可分割的一部分。
+                        1. 9会员服务协议是会员注册协议不可分割的一部分。
+                        1. 10会员服务协议是会员注册协议不可分割的一部分。
+                        1. 11会员
+                    </textarea>
+                    <div align="center">
+                        <input type="checkbox" id="yes" name="yes" onclick="go()"><label for="yes">已阅读并同意上述条款</label>
+                    </div>
+                </fieldset>
+                <input type="reset" class="btn" value="重 填">
+                <input type="submit" id="submit" class="btn" value="注 册" onclick="return validate_reg()">
+            </form>
+        </main>
+    </div>
+    <footer class="page-footer">
+        &copy;2016 茗茶馆版权所有
+    </footer>
+
+    <script src="js/validate_reg.js"></script>
+    <script src="js/time.js"></script>
+</body>
+</html>
